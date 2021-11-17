@@ -37,11 +37,9 @@ In your solution, focus on correctness. The performance of your solution will no
 
 Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
 
-
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
+--------------------------------------------------------------------------------------------------------------------------
+def solutions(A, K):
+	deq = deque(A)
+	deq.rotate(K)
+	return list(deq)
+--------------------------------------------------------------------------------------------------------------------------
