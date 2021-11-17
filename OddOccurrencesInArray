@@ -36,3 +36,11 @@ from collections import Counter
 def solution(A):
     return Counter(A).most_common()[-1][0]
 ------------------------------------------------------------------------------------
+# ver2.
+
+from collections import Counter
+
+def solution(A):
+    d = dict(Counter(A))
+    return min(d, key=d.get)
+------------------------------------------------------------------------------------
