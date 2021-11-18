@@ -24,7 +24,7 @@ X, Y and D are integers within the range [1..1,000,000,000];
 X ≤ Y.
 
 --------------------------------------------------------------
-ver1.
+try 1.
 
 def solution(X, Y, D):
     cnt = 0
@@ -34,9 +34,21 @@ def solution(X, Y, D):
         Y = Y - D
     return cnt
 --------------------------------------------------------------
-ver2.
+try 2.
 
 import math
 
 def solution(X, Y, D):
 	return math.floor((Y - X) / D) + 1
+--------------------------------------------------------------
+try 3.
+
+import math
+
+def solution(X, Y, D):
+	if X >= Y:
+		return 0
+	if X + D == Y or X + D > Y:
+		return 1
+
+	return math.ceil((Y - X) / D)
