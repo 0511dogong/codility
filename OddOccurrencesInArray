@@ -33,6 +33,7 @@ all but one of the values in A occur an even number of times.
 
 from collections import Counter
 
+# Total score: 66%
 def solution(A):
     return Counter(A).most_common()[-1][0]
 ------------------------------------------------------------------------------------
@@ -40,6 +41,7 @@ def solution(A):
 
 from collections import Counter
 
+# # Total score: 66%
 def solution(A):
     d = dict(Counter(A))
     return min(d, key=d.get)
