@@ -37,10 +37,12 @@ In your solution, focus on correctness. The performance of your solution will no
 
 Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
 
---------------------------------------------------------------------------------------------------------------------------
+try 1.
+
 from collections import deque
 
 def solution(A, K):
+# Total score: 100%
 	deq = deque(A)
 	deq.rotate(K)
 	return list(deq)
