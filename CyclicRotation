@@ -41,8 +41,8 @@ try 1.
 
 from collections import deque
 
-def solution(A, K):
 # Total score: 100%
+def solution(A, K):
 	deq = deque(A)
 	deq.rotate(K)
 	return list(deq)
