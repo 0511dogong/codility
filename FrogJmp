@@ -26,6 +26,7 @@ X ≤ Y.
 --------------------------------------------------------------
 try 1.
 
+# Total score: 44%
 def solution(X, Y, D):
     cnt = 0
     Y = Y - X
@@ -38,6 +39,7 @@ try 2.
 
 import math
 
+# Total score: 44%
 def solution(X, Y, D):
 	return math.floor((Y - X) / D) + 1
 --------------------------------------------------------------
@@ -45,6 +47,7 @@ try 3.
 
 import math
 
+# Total score: 100%
 def solution(X, Y, D):
 	if X >= Y:
 		return 0
