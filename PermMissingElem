@@ -25,22 +25,26 @@ each element of array A is an integer within the range [1..(N + 1)].
 ---------------------------------------------------------------------
 try 1.
 
+# Total score: 50%
 def solution(A):
 	return list(set(i+1 for i in range(len(A))) - set(A))[0]
   
 ---------------------------------------------------------------------
 try 2.
 
+# Total score: 10%
 def solution(A):
     return A[len(A)-1] - (sum(A) - sum(range(1,len(A) + 1)))
 ---------------------------------------------------------------------
 try 3.
 
+# Total score: 50%
 def solution(A):
 	return list(set(range(1,len(A) + 1)) - set(A))[0]
 ---------------------------------------------------------------------
 try 4.
 
+# Total score: 100%
 def solution(A):
 	if not A:
 		return 1
@@ -55,6 +59,7 @@ def solution(A):
 ---------------------------------------------------------------------
 try 5.
 
+# Total score: 100%
 def solution(A):
 	if not A:
 		return 1
