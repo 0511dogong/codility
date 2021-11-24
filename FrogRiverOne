@@ -61,3 +61,25 @@ def solution(X, A):
             break
 
     return earliest_time
+
+try 2.
+from collections import Counter
+
+# Total score: 27%
+def solution(X, A):
+	earliest_time = -1
+	idx = 0
+
+	if not A or X not in A:
+		return earliest_time
+
+	position_set = set()
+	finded_index = A.index(X)
+	diff_result = set(range(1, X+1)) - set(Counter(A[:finded_index+1]).keys())
+
+	if not diff_result:
+		return sum(Counter(A[:finded_index+1]).values()) + earliest_time
+	else:
+		if not diff_result - set(A[finded_index+1:]):
+			return sum(Counter(A[:finded_index+1]).values()) + earliest_time + len(diff_result)
+	return earliest_time
