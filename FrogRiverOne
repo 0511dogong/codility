@@ -83,3 +83,20 @@ def solution(X, A):
 		if not diff_result - set(A[finded_index+1:]):
 			return sum(Counter(A[:finded_index+1]).values()) + earliest_time + len(diff_result)
 	return earliest_time
+
+try3.
+from collections import defaultdict
+
+# Total score: 90%
+def solution(X=None, A=None):
+	impossible = -1
+	if not X or not A:
+		return impossible
+
+	D = defaultdict(list)
+	for idx, val in enumerate(A):
+		D[val].append(idx)
+
+	if not D.get(X, None):
+		return impossible
+	return max((min(D.get(s, impossible)) for s in set(range(1, X+1))))
