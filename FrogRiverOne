@@ -100,3 +100,23 @@ def solution(X=None, A=None):
 	if not D.get(X, None):
 		return impossible
 	return max((min(D.get(s, impossible)) for s in set(range(1, X+1))))
+	
+try 4.
+
+from collections import defaultdict
+
+# Total score: 100%
+def solution(X=None, A=None):
+	impossible = -1
+	if not X or not A:
+		return impossible
+	A = [1] + A
+
+	D = defaultdict(list)
+	for idx, val in enumerate((val for val in A[1:] if val <= X), 1):
+		D[val].append(idx)
+	if not D.get(X, None):
+		return impossible
+	if set(range(1, X+1)) != set(D.keys()):
+		return impossible
+	return max(min(d) for d in D.values())-1
