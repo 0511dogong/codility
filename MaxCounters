@@ -52,7 +52,8 @@ each element of array A is an integer within the range [1..N + 1].
 
 try 1.
 
-from itertools import repeat, Counter
+from itertools import repeat
+from collections import Counter
 import heapq
 
 def solution(N, A):
