@@ -56,6 +56,7 @@ from itertools import repeat
 from collections import Counter
 import heapq
 
+# Total score: 0%
 def solution(N, A):
 	start = 0
 	result_list = list(repeat(0, N))
