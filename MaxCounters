@@ -72,3 +72,27 @@ def solution(N, A):
 			for a in A[A_index+1:]:
 				result_list[a-1] = result_list[a-1]+1
 	return result_list
+
+try 2.
+
+from itertools import repeat 
+
+# Total score: 66%
+def solution(N, A):
+	if not N:
+		raise Exception("N is empty")
+	if not A:
+		return list()
+	result_list = list(repeat(0, N))
+	def increase(index):
+		nonlocal result_list
+		try:
+			result_list[index] += 1
+		except ValueError:
+			raise Exception("not exitst key")
+	def max_counter():
+		nonlocal result_list
+		result_list = list(repeat(max(result_list), N))
+	for val in iter(A):
+		max_counter() if val == N+1 else increase(val-1)
+	return result_list
