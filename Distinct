@@ -23,4 +23,6 @@ from collections import Counter
 def solution(A):
     if not A:
         return 0
-    return len(Counter(A))
+        
+    return len(set(A))
+    # return len(Counter(A))
