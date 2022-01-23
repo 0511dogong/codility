@@ -41,8 +41,18 @@ def solution(A):
 
 from collections import Counter
 
-# # Total score: 66%
+# Total score: 66%
 def solution(A):
     d = dict(Counter(A))
     return min(d, key=d.get)
+------------------------------------------------------------------------------------
+# try 3.
+
+from collections import Counter
+
+# Total score: 100%
+def solution(A):
+  for value, count in iter(Counter(A).items()):
+    if count % 2:
+      return value
 ------------------------------------------------------------------------------------
