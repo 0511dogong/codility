@@ -96,3 +96,25 @@ def solution(N, A):
 	for val in iter(A):
 		max_counter() if val == N+1 else increase(val-1)
 	return result_list
+
+-------------------------------------------------------------------
+# trying
+
+def solution(N, A):
+  L = list(repeat(0, N))
+  print("L={}".format(L))
+  S = "".join(map(str, A))
+  print("S={}".format(S))
+  L = F.split(str(N+1))
+  print("L={}".format(L))
+
+  for i, l in iter(enumerate(L, 1)):
+    for m in iter(l):
+      print("int(m)={}".format(int(m)))
+      L[int(m)-1] += 1
+    if i != len(L):
+      L = list(repeat(max(l), len))
+  print("L={}".format(L))
+  return L
+
+print(solution(5, [3,4,4,6,1,4,4]))
