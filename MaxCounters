@@ -72,6 +72,8 @@ def solution(N, A):
 			for a in A[A_index+1:]:
 				result_list[a-1] = result_list[a-1]+1
 	return result_list
+	
+-------------------------------------------------------------------
 
 try 2.
 
@@ -98,23 +100,23 @@ def solution(N, A):
 	return result_list
 
 -------------------------------------------------------------------
-# trying
+# try 3.
 
+from itertools import repeat
+from collections import Counter
+
+# score: 0%
 def solution(N, A):
-  L = list(repeat(0, N))
-  print("L={}".format(L))
-  S = "".join(map(str, A))
-  print("S={}".format(S))
-  L = F.split(str(N+1))
-  print("L={}".format(L))
+	max_counter = 1
+	R = list(repeat(1, N))
+	S = "".join(map(str, A))
+	L = S.split(str(N+1))
 
-  for i, l in iter(enumerate(L, 1)):
-    for m in iter(l):
-      print("int(m)={}".format(int(m)))
-      L[int(m)-1] += 1
-    if i != len(L):
-      L = list(repeat(max(l), len))
-  print("L={}".format(L))
-  return L
-
-print(solution(5, [3,4,4,6,1,4,4]))
+	for i in range(len(L)):
+		if i == (len(L)-1):
+			R = list(repeat(max_counter, N))
+			for val in iter(L[i]):
+				R[int(val)-1] += 1
+		else:
+			max_counter = int(Counter(L[i]).most_common(1)[0][1])
+	return R
