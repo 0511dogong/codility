@@ -144,3 +144,23 @@ def solution(N, A):
 			max_counter = max(D.values())
 			D = {n: max_counter for n in range(1, N+1)}
 	return list(D.values())
+------------------------------------------------------------------
+
+
+from collections import deque, defaultdict 
+
+# trying
+def solution(N, A):
+	D = defaultdict(int)
+	max_counter = 1
+
+	D_Q = deque(A)
+	while D_Q:
+		V = D_Q.popleft()
+		if V != N+1:
+			D[V] += 1
+			if D[V] > max_counter:
+				max_counter = D[V]
+		else:
+			D = defaultdict(lambda: max_counter)
+	return [D[a] for a in range(1, N+1)]
