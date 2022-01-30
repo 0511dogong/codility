@@ -50,6 +50,8 @@ def solution(A):
 						return -1
 	return cnt
 	
+-----------------------------------------------------
+	
 # try 2.
 # Total Score: 50%
 def solution(A):
@@ -60,3 +62,18 @@ def solution(A):
 			if cnt > 1000000000:
 				return -1
 	return cnt
+
+-----------------------------------------------------
+
+# try 3.
+# Total Score: 50%
+from itertools import filterfalse
+
+def solution(A):
+    passing_car_cnt = 0
+    for a in range(len(A)):
+        if not A[a]:
+            passing_car_cnt += len(list(filterfalse(lambda x: not x, A[a+1:])))
+            if passing_car_cnt > 1000000000:
+                return -1
+    return passing_car_cnt
