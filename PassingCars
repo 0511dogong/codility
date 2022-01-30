@@ -96,3 +96,23 @@ def solution(A):
         if cnt > 1000000000:
             return -1
     return cnt
+    
+-----------------------------------------------------
+# try 3.
+# Total Score: 100%
+
+from collections import Counter
+
+def solution(A):
+    cnt = 0
+    east_car_cnt = Counter(A)[0]
+
+    while(A):
+        b = A.pop()
+        if b:
+            cnt += east_car_cnt
+        else:
+            east_car_cnt -= 1
+        if cnt > 1000000000:
+            return -1
+    return cnt
