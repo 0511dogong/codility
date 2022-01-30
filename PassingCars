@@ -77,3 +77,22 @@ def solution(A):
             if passing_car_cnt > 1000000000:
                 return -1
     return passing_car_cnt
+
+-----------------------------------------------------
+
+# try 3.
+# Total Score: 60%
+
+from itertools import filterfalse
+
+def solution(A):
+    cnt = 0
+    B, C = [], []
+    for i, a in enumerate(A):
+        B.append(i) if not a else C.append(i)
+    while(B):
+        b = B.pop()
+        cnt += len(list(filterfalse(lambda c: c < b, C)))
+        if cnt > 1000000000:
+            return -1
+    return cnt
