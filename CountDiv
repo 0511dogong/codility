@@ -42,3 +42,14 @@ def solution(A, B, K):
 
 def solution(A, B, K):
     return sum(1 for c in range(A, B+1) if not c%K)
+    
+------------------------------------
+    
+# try 3.
+# Score: 37%
+    
+import math
+
+def solution(A, B, K):
+	C = B - (A - 1)
+	return (math.trunc(C / K)) + (C % K)
