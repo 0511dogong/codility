@@ -34,3 +34,11 @@ def solution(A, B, K):
         return 0
     cnt = B-A+1
     return math.trunc(cnt / K)
+    
+------------------------------------
+
+# try 2.
+# Score: 50%
+
+def solution(A, B, K):
+    return sum(1 for c in range(A, B+1) if not c%K)
